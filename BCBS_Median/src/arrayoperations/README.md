@@ -9,8 +9,8 @@ This repository contains a solution to the Blue Cross Blue Shield code challenge
 
 ## Guidelines
 How to run the solution:
-    1. In an Eclipse workspace, navigate to File>Import>Git and select "Projects from Git"
-    2. Clone this repository and select BCBS_Median
-    3. Navigate to MedianApp.java
-    4. Press Ctrl + F11 to run
-    5. The results of the program will appear in the console window
+1. In an Eclipse workspace, navigate to File>Import>Git and select "Projects from Git"
+2. Clone this repository and select BCBS_Median
+3. Navigate to MedianApp.java
+4. Press Ctrl + F11 to run
+5. The results of the program will appear in the console window
