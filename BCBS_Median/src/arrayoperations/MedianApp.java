@@ -10,15 +10,19 @@ import java.util.Arrays;
 public class MedianApp {
 	
 	/**
-	 * This method is called by findMedian(). It takes in two int arrays as 
-	 * parameters and concatenates them.
-	 * It takes the length of each array, and uses the sum of those lengths to initialize
-	 * a new int array large enough to contain both of them.
-	 * The contents of each parameter array are iterated over 
-	 * and added to the newly initialized array. This array is then sorted and returned.
-	 * @param nums1 an int[] provided by findMedian().
-	 * @param nums2 an int[] provided by findMedian().
-	 * @return a sorted int[] comprised of the contents of nums1 and nums2.
+	 * Returns a single int[] array composed of the contents of two int[] arrays, 
+	 * which are taken as parameters.
+	 * 
+	 * This method is called by findMedian().
+	 * It takes the length of each int[] array from the parameters, and uses the 
+	 * sum of those lengths to initialize a new int[] array large enough to contain both of them.
+	 * The contents of each parameter array are iterated over and added to the 
+	 * newly initialized array. This array is then sorted and returned.
+	 * 
+	 * @param nums1 an int[] provided by findMedian.
+	 * @param nums2 an int[] provided by findMedian.
+	 * @return a sorted int[] composed of the contents of nums1 and nums2.
+	 * @see findMedian
 	 */
 	private static int[] mergeArrays(int[] nums1, int[] nums2) {
 		int nums1Len = nums1.length;
@@ -38,7 +42,20 @@ public class MedianApp {
 		
 		return mergedArray;
 	}
-	
+	/**
+	 * Returns the median of two sorted int[] arrays, 
+	 * which are taken as parameters.
+	 * 
+	 * This method calls mergeArrays to receive a concatenation of 
+	 * its two int[] array parameters. It takes the length of this concatenation.
+	 * If the length is even, this method finds and returns the average of 
+	 * the two middle indices. If the length is odd, this method
+	 * finds and returns the middle index.
+	 * 
+	 * @param nums1 a sorted int[] array.
+	 * @param nums2 a sorted int[] array.
+	 * @return an int or double value that is the median of nums1 and nums2.
+	 */
 	public static Number findMedian(int[] nums1, int[] nums2) {
 		Number median = 0;
 		int[] mergedNums = mergeArrays(nums1, nums2);
@@ -47,8 +64,8 @@ public class MedianApp {
 		System.out.println("Combined Array: " +Arrays.toString(mergedNums));
 		System.out.println("Length: " + arrLen);
 
-		if (arrLen % 2 == 0) {
-			median = (double)(mergedNums[arrLen/2] + mergedNums[(arrLen-1)/2])/2.0;
+		if (arrLen % 2 == 0) { //check to see if the length is even
+			median = (double)(mergedNums[arrLen/2] + mergedNums[(arrLen-1)/2])/2.0; //take the average of the middle two indices
 		} else {
 			median = (int)mergedNums[arrLen/2];
 		}
